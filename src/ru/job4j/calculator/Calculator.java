@@ -2,19 +2,35 @@ package ru.job4j.calculator;
 
 public class Calculator {
 
+    private static int x = 5;
+
+    public static int sum(int number) {
+        return x + number;
+    }
+
+    public int multiply(int number) {
+        return x * number;
+    }
+
+    public static int minus(int number) {
+        return number - x;
+    }
+
+    public static int divide(int number) {
+        return number / x;
+    }
+
+    public int sumAllOperation(int number) {
+        return sum(number) + multiply(number) + minus(number) + divide(number);
+    }
+
     public static void main(String[] args) {
-        int one = 1;
-        int two = 2;
-        int six = 6;
-        int four = 4;
-        int five = 5;
-        int onePlusTwo = one + two;
-        int sixDivTwo = six / two;
-        int fiveMinusTwo = five - two;
-        int fourMultiplyTwo = four * two;
-        System.out.println(onePlusTwo);
-        System.out.println(sixDivTwo);
-        System.out.println(fiveMinusTwo);
-        System.out.println(fourMultiplyTwo);
+        int number = 10;
+        int s = sum(number);
+        int min = minus(number);
+        int div = divide(number);
+        Calculator calc = new Calculator();
+        int mult = calc.multiply(number);
+        int sumAll = calc.sumAllOperation(number);
     }
 }
